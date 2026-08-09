@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.info{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.player{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.boxes{
+    background-color: bisque;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+}
+.boxes button{
+    width: 100px;
+    height: 100px;
+    /* background-color: blue; */
+}
+.main-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8%;
+}
