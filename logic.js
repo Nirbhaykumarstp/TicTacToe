@@ -1,4 +1,5 @@
-let playerInfo = [
+let playerInfo = 
+[
     { p1Name: "", isTurn: false, wins: 0 },
     { p2Name: "", isTurn: false, wins: 0 }
 ]
@@ -41,8 +42,43 @@ function gameStart()
                         playerInfo[1].isTurn = false
                     }
                     b.disabled=true
+                    checkWinner()
                 })
             })
+
+            let checkWinner=()=>{
+                let winCondition=[
+                    [0,1,2],    //0
+                    [3,4,5],    //1
+                    [6,7,8],    //2
+                    [0,3,6],    //3
+                    [1,4,7],    //4
+                    [2,5,8],    //5
+                    [0,4,8],    //6
+                    [2,4,6]     //7
+                ]
+                for(let condition of winCondition)
+                {
+                    console.log(condition)
+                    let button1=buttons[condition[0]].innerText
+                    let button2=buttons[condition[1]].innerText
+                    let button3=buttons[condition[2]].innerText
+                    console.log("button1",button1)
+                    console.log("button2",button2)
+                    console.log("button3",button3)
+                    if(button1=="X" && button2=="X" && button3=="X")
+                    {
+                        console.log("player1 winner")
+                    }
+                    else if(button1=="O" && button2=="O" && button3=="O")
+                    {
+                        console.log("player2 winner")
+                    }
+                    //problem
+                    else if(!(button1=="" && button2=="" && button3=="") && !(button1=="X" && button2=="X" && button3=="X") || !(button1=="O" && button2=="O" && button3=="O"))
+                        console.log("draw")
+                }
+            }
         }
         else{
             alert("Please Enter a appropriate Name")
