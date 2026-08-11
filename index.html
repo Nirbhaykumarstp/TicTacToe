@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="info">
+            <div class="player">
+                <span id="plyr-1-name">Player1 Name</span>
+                <span>0</span>
+            </div>
+            <h2><span id="turn">players turn</span></h2>
+            <div class="player">
+                <span id="plyr-2-name">Player2 Name</span>
+                <span>0</span>
+            </div>
+        </div>
+        <hr>
+        <div class="main-game">
+            <div class="boxes">
+                <button class="btn"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+            </div>
+            <div class="game-btn">
+                <button onClick="gameStart()" id="Start">Start Game</button>
+                <button onClick="resetGame()" id="resetbtn">Reset Game</button>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="logic.js"></script>
+</html>
