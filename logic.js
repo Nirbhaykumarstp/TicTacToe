@@ -26,8 +26,10 @@ function gameStart()
             let buttons = document.querySelectorAll(".btn")
             console.log(buttons)
             document.getElementById("turn").innerText = playerInfo[0].p1Name
+            let countforClick=0
             buttons.forEach((b) => {
                 b.addEventListener("click", () => {
+                    countforClick++
                     if(playerInfo[0].isTurn)
                     {
                         b.innerText = "X"
@@ -42,11 +44,11 @@ function gameStart()
                         playerInfo[1].isTurn = false
                     }
                     b.disabled=true
-                    checkWinner()
+                    checkWinner(countforClick)
                 })
             })
 
-            let checkWinner=()=>{
+            let checkWinner=(noofClicks)=>{
                 let winCondition=[
                     [0,1,2],    //0
                     [3,4,5],    //1
@@ -69,15 +71,31 @@ function gameStart()
                     if(button1=="X" && button2=="X" && button3=="X")
                     {
                         console.log("player1 winner")
+                        document.getElementById("winner-name").innerText=playerInfo[0].p1Name
+                        playerInfo[0].wins+=1
+                        document.getElementById("p1-score").innerText=playerInfo[0].wins
+                        buttons.forEach((b)=>{
+                            b.disabled=true
+                        })
+                        document.getElementById("winner-declare").style.display="block"
                     }
                     else if(button1=="O" && button2=="O" && button3=="O")
                     {
                         console.log("player2 winner")
+                        document.getElementById("winner-name").innerText=playerInfo[1].p2Name
+                        playerInfo[1].wins+=1
+                        document.getElementById("p2-score").innerText=playerInfo[1].wins
+                        buttons.forEach((b)=>{
+                            b.disabled=true
+                        })
+                        document.getElementById("winner-declare").style.display="block"
                     }
-                    //problem
-                    else if(!(button1=="" && button2=="" && button3=="") && !(button1=="X" && button2=="X" && button3=="X") || !(button1=="O" && button2=="O" && button3=="O"))
+                    else if(!(button1=="" && button2=="" && button3=="") && (noofClicks-1==winCondition.length))
+                    {
                         console.log("draw")
+                    }
                 }
+                
             }
         }
         else{
