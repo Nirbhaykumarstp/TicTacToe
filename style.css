@@ -2,8 +2,11 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: rgba(0, 0, 0, 0.815);
+}
 .info{
-    background-color: aquamarine;
+    background-color: rgb(248, 244, 244);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,16 +17,19 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 .boxes{
-    background-color: bisque;
     display: grid;
     grid-template-columns: 100px 100px 100px;
+    gap: 5px;
 }
 .boxes button{
+    border-radius: 15px;
     width: 100px;
     height: 100px;
+    color: rgb(0, 0, 0);
+    font-size: larger;
     /* background-color: blue; */
 }
 .boxes button:disabled{
@@ -48,16 +54,21 @@
     display: none;
 }
 .game-btn button{
-    padding: 2%;
+    padding: 3%;
     border: 2px solid black;
+    border-radius: 5px;
 }
 .game-btn button:hover{
-    background-color: aquamarine;
+    background-color: black;
+    color: aliceblue;
     cursor: pointer;
 }
 
 #winner-declare{
     display: none;
+    color: antiquewhite;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 5px;
 }
 
 #new-game{
