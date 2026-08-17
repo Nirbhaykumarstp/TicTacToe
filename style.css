@@ -66,7 +66,7 @@ body{
 
 #winner-declare{
     display: none;
-    color: antiquewhite;
+    color: rgb(236, 229, 218);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-top: 5px;
 }
