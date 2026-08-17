@@ -12,6 +12,7 @@ function gameStart() {
     {
         if (!(plyr1Name == "" || plyr2Name == "")) 
         {
+            
             document.getElementById("Start").style.display = "none"
             document.getElementById("resetbtn").style.display = "block"
             document.getElementById("resetbtn").addEventListener("click", () => {
@@ -21,12 +22,6 @@ function gameStart() {
                     window.location.reload()
                 }
             })
-
-            // yaha par problem hai
-            /*document.getElementById("new-game").addEventListener("click", () => {
-                
-            })*/
-
             playerInfo[0].p1Name = plyr1Name
             playerInfo[0].isTurn = true
             playerInfo[1].p2Name = plyr2Name
@@ -92,8 +87,22 @@ function gameStart() {
                         })
                         document.getElementById("winner-declare").style.display = "block"
                         document.getElementById("new-game").style.display = "block"
+                        
                         localStorage.setItem("player1:",JSON.stringify(playerInfo[0]))
                         localStorage.setItem("player2:",JSON.stringify(playerInfo[1]))
+                        document.getElementById("new-game").addEventListener("click",()=>{
+                            buttons.forEach((btn)=>{
+                                btn.disabled=false
+                                btn.innerText=""
+                            })
+                            document.getElementById("winner-declare").style.display = "none"
+                            document.getElementById("new-game").style.display = "none"
+                            countforClick=0
+                            button1=null
+                            button2=null
+                            button3=null
+                        })
+                        
                     }
                     else if (button1 == "O" && button2 == "O" && button3 == "O") 
                     {
@@ -106,16 +115,42 @@ function gameStart() {
                         })
                         document.getElementById("winner-declare").style.display = "block"
                         document.getElementById("new-game").style.display = "block"
+                        
                         localStorage.setItem("player1:",JSON.stringify(playerInfo[0]))
                         localStorage.setItem("player2:",JSON.stringify(playerInfo[1]))
+                        document.getElementById("new-game").addEventListener("click",()=>{
+                            buttons.forEach((btn)=>{
+                                btn.disabled=false
+                                btn.innerText=""
+                            })
+                            document.getElementById("winner-declare").style.display = "none"
+                            document.getElementById("new-game").style.display = "none"
+                            countforClick=0
+                            button1=null
+                            button2=null
+                            button3=null
+                        })
                     }
                     else if (!(button1 == "" && button2 == "" && button3 == "") && (noofClicks - 1 == winCondition.length)) 
                     {
                         document.getElementById("winner-declare").innerText = "Draw"
                         document.getElementById("winner-declare").style.display = "block"
                         document.getElementById("new-game").style.display = "block"
+                        
                         localStorage.setItem("player1:",JSON.stringify(playerInfo[0]))
                         localStorage.setItem("player2:",JSON.stringify(playerInfo[1]))
+                        document.getElementById("new-game").addEventListener("click",()=>{
+                            buttons.forEach((btn)=>{
+                                btn.disabled=false
+                                btn.innerText=""
+                            })
+                            document.getElementById("winner-declare").style.display = "none"
+                            document.getElementById("new-game").style.display = "none"
+                            countforClick=0
+                            button1=null
+                            button2=null
+                            button3=null
+                        })
                     }
                 }
 
